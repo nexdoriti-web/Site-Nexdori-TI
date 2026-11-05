@@ -1,5 +1,5 @@
 // Troque pelo seu número: código do país + DDD + número, só dígitos
-const WA='5511999999999';
+const WA='5511934424010';
 const $=s=>document.querySelector(s);
 $('#mb').onclick=()=>$('nav').classList.toggle('open');
 document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>$('nav').classList.remove('open')));

@@ -1,89 +1,806 @@
 /* Nexdori TI: cores principais ficam em :root (--blue, --cyan, --bg...) */
-:root{--bg:#02050b;--panel:#07101e;--line:#14315c;--blue:#1e7bff;--cyan:#2cc4ff;--ink:#e9eef6;--mute:#93a3bd;--glow:0 0 28px rgba(30,123,255,.4);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-html{scroll-behavior:smooth;scroll-padding-top:calc(80px + env(safe-area-inset-top,0px))}
-*,*::before,*::after{box-sizing:inherit}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "IBM Plex Sans",system-ui,"Segoe UI",Arial,sans-serif;overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:rgba(2,5,11,.92);z-index:60}
-img{max-width:100%;display:block}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
-.w{max-width:1160px;margin:0 auto;padding:0 20px}
-h1,h2,h3,.f{font-family:Michroma,"Segoe UI",system-ui,sans-serif;font-weight:400;line-height:1.25;margin:0}
-.m{background:linear-gradient(180deg,#fff 20%,#8d9bb2);-webkit-background-clip:text;background-clip:text;color:transparent}
-.b{color:var(--blue)}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(2,5,11,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nv{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
-.br{display:flex;align-items:center;gap:12px;text-decoration:none;font-size:1.05rem}
-.br img{height:48px;width:auto;mix-blend-mode:screen}
-nav{display:flex;align-items:center;gap:26px}
-nav a{text-decoration:none;color:var(--mute);font-weight:600;font-size:.95rem}
-nav a:hover{color:#fff}
-#mb{display:none;background:none;border:1px solid var(--line);color:#fff;border-radius:8px;padding:8px 12px;font-size:1.1rem;cursor:pointer}
-.btn{display:inline-flex;align-items:center;padding:.8rem 1.5rem;border-radius:4px;font:600 1rem "IBM Plex Sans",sans-serif;text-decoration:none;border:1px solid var(--blue);color:#fff;background:transparent;cursor:pointer;transition:background .2s,box-shadow .2s}
-.btn:hover{box-shadow:var(--glow);background:rgba(30,123,255,.15)}
-.btn.p{background:linear-gradient(135deg,#2a86ff,#0a4bd0)}
-.btn.p:hover{background:linear-gradient(135deg,#4a9aff,#1a5fe8)}
-.hero{padding:70px 0 60px;background:radial-gradient(55% 70% at 78% 35%,rgba(30,123,255,.26),transparent 70%),linear-gradient(rgba(30,123,255,.07) 1px,transparent 1px) 0 0/52px 52px,linear-gradient(90deg,rgba(30,123,255,.07) 1px,transparent 1px) 0 0/52px 52px}
-.hg{display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:center}
-h1{font-size:clamp(1.9rem,4.4vw,3.2rem)}
-.lead{color:var(--mute);font-size:1.12rem;max-width:30em;margin:22px 0 30px}
-.cta{display:flex;gap:14px;flex-wrap:wrap}
-.fx{list-style:none;padding:0;margin:34px 0 0;display:flex;gap:10px 28px;flex-wrap:wrap;color:var(--mute);font-size:.93rem}
-.fx li::before{content:"✓ ";color:var(--cyan);font-weight:700}
-.hl{width:min(100%,500px);margin:auto;mix-blend-mode:screen}
-.sec{padding:84px 0}
-.alt{background:linear-gradient(180deg,#040a15,var(--bg))}
-.hd{margin-bottom:48px;max-width:40em}
-h2{font-size:clamp(1.5rem,3vw,2.15rem)}
-.hd p{color:var(--mute);margin:14px 0 0}
-.sv{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:38px 44px}
-.sv article{position:relative;padding:0 0 4px 28px;border-left:2px solid var(--blue)}
-.sv article::before{content:"";position:absolute;left:-8px;top:0;width:14px;height:14px;border:2px solid var(--cyan);border-radius:50%;background:var(--bg)}
-h3{font-size:.98rem;margin-bottom:8px}
-.sv p,.stp p{margin:0;color:var(--mute);font-size:.96rem}
-.stp{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:34px 28px;counter-reset:s;padding:0;margin:0;list-style:none}
-.stp li{position:relative;padding-top:30px;border-top:2px solid var(--line)}
-.stp li::before{counter-increment:s;content:counter(s);position:absolute;top:-17px;left:0;width:32px;height:32px;border-radius:50%;background:var(--bg);border:2px solid var(--blue);display:grid;place-items:center;font:12px Michroma,sans-serif;color:var(--cyan)}
-.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:24px;align-items:stretch}
-.ch{position:relative;padding:32px 28px;background:var(--line);clip-path:polygon(0 0,calc(100% - 30px) 0,100% 30px,100% 100%,0 100%)}
-.ch::before{content:"";position:absolute;inset:1px;background:var(--panel);clip-path:polygon(0 0,calc(100% - 30px) 0,100% 30px,100% 100%,0 100%);z-index:-1}
-.ch.on{background:var(--blue)}
-.ch small{color:var(--cyan);font-weight:600;font-size:.85rem}
-.pr{font:1.7rem Michroma,sans-serif;margin:12px 0 4px}
-.pr span{font:.85rem "IBM Plex Sans",sans-serif;color:var(--mute)}
-ul.ck{list-style:none;padding:0;margin:18px 0 26px;color:var(--mute);font-size:.94rem}
-ul.ck li{padding:5px 0 5px 24px;position:relative}
-ul.ck li::before{content:"✓";position:absolute;left:0;color:var(--cyan);font-weight:700}
-.bn{border:1px solid var(--blue);box-shadow:var(--glow);width:100%;height:auto}
-.fq{max-width:800px}
-details{border-bottom:1px solid var(--line)}
-summary{cursor:pointer;padding:18px 0;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";color:var(--cyan);font-size:1.4rem;line-height:1}
-details[open] summary::after{content:"–"}
-details p{margin:0 0 18px;color:var(--mute)}
-.ct{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start}
-.il{list-style:none;padding:0;margin:26px 0 0}
-.il li{margin-bottom:16px;color:var(--mute)}
-.il b{display:block;color:#fff}
-form{display:grid;gap:14px}
-label{font-size:.85rem;color:var(--mute);display:grid;gap:6px}
-input,select,textarea{background:#050c18;border:1px solid var(--line);border-radius:4px;color:#fff;padding:12px 14px;font:inherit;width:100%}
-textarea{min-height:110px;resize:vertical}
-#ok{color:var(--cyan);margin:0;font-size:.92rem}
-footer{border-top:1px solid var(--line);padding:42px 0 30px;background:#010308;color:var(--mute);font-size:.92rem}
-.fg{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
-.fg p{max-width:22em;margin:12px 0 0}
-.fg a{display:block;text-decoration:none;padding:3px 0}
-.fg a:hover{color:#fff}
-.cp{margin-top:30px;font-size:.82rem}
-.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;text-decoration:none;padding:12px 20px;border-radius:99px;background:linear-gradient(135deg,#2a86ff,#0a4bd0);font-weight:600;box-shadow:var(--glow)}
-@media(max-width:860px){.hg,.ct{grid-template-columns:1fr}.hl{width:min(78%,360px);order:-1}#mb{display:block}nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:rgba(2,5,11,.98);border-bottom:1px solid var(--line);padding:8px 20px 16px}nav.open{display:flex}nav a{padding:12px 0}.sec{padding:60px 0}.hero{padding-top:40px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-/* Título do hero: duas linhas, fonte mais forte, contraste alto */
-.hero h1{font-family:"Chakra Petch","Segoe UI",system-ui,sans-serif;font-weight:700;font-size:clamp(2rem,4vw,3.1rem);line-height:1.12;letter-spacing:-.01em;text-wrap:balance}
-.hero h1 .ln{display:block}
-.hero h1 .ln:first-child{white-space:nowrap}
-.hero h1 .m{background:linear-gradient(180deg,#fff 40%,#c3cfe3);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero h1 .b{color:var(--blue);text-shadow:0 0 26px rgba(30,123,255,.55)}
-.hero h1::after{content:"";display:block;width:96px;height:3px;margin-top:22px;background:linear-gradient(90deg,var(--blue),transparent);box-shadow:var(--glow)}
+
+
+/* ============================================================
+   VARIÁVEIS (CORES E CONFIGURAÇÕES GERAIS)
+   Mude as cores aqui e o site inteiro acompanha
+   ============================================================ */
+:root {
+  --bg: #02050b;                          /* Cor de fundo da página (quase preto) */
+  --panel: #07101e;                       /* Fundo dos cartões de plano e formulário */
+  --line: #14315c;                        /* Cor das linhas e bordas */
+  --blue: #1e7bff;                        /* Azul principal da marca */
+  --cyan: #2cc4ff;                        /* Azul claro (detalhes, ✓, números) */
+  --ink: #e9eef6;                         /* Cor do texto principal */
+  --mute: #93a3bd;                        /* Cor do texto secundário (cinza azulado) */
+  --glow: 0 0 28px rgba(30, 123, 255, .4); /* Efeito de brilho azul (sombra) */
+  color-scheme: dark;                     /* Avisa o navegador que o site é escuro */
+  box-sizing: border-box;                 /* Padding e borda entram no cálculo da largura */
+  padding-top: env(safe-area-inset-top, 0px);       /* Espaço no topo para o "notch" do celular */
+  padding-bottom: env(safe-area-inset-bottom, 0px); /* Espaço embaixo para a barra do celular */
+}
+
+
+/* ============================================================
+   BASE (REGRAS GERAIS DA PÁGINA)
+   ============================================================ */
+
+/* Página inteira */
+html {
+  scroll-behavior: smooth;                                         /* Rolagem suave ao clicar nos links do menu */
+  scroll-padding-top: calc(80px + env(safe-area-inset-top, 0px)); /* Evita que o menu fixo cubra o título da seção */
+}
+
+/* Todos os elementos (e os pseudo-elementos ::before e ::after) */
+*,
+*::before,
+*::after {
+  box-sizing: inherit; /* Herda o box-sizing definido em :root */
+}
+
+/* Corpo da página */
+body {
+  margin: 0;                                                           /* Remove a margem padrão do navegador */
+  background: var(--bg);                                               /* Fundo escuro */
+  color: var(--ink);                                                   /* Cor do texto */
+  font: 16px/1.65 "IBM Plex Sans", system-ui, "Segoe UI", Arial, sans-serif; /* Tamanho 16px, altura de linha 1.65 e fontes em ordem de preferência */
+  overflow-x: hidden;                                                  /* Esconde rolagem horizontal indesejada */
+}
+
+/* Faixa que cobre a área do "notch" no topo do celular */
+body::before {
+  content: "";                              /* Necessário para o elemento aparecer */
+  position: fixed;                          /* Fica fixa na tela */
+  inset: 0 0 auto;                          /* Cola no topo, esquerda e direita */
+  height: env(safe-area-inset-top, 0px);    /* Altura igual à área do notch (0 no computador) */
+  background: rgba(2, 5, 11, .92);          /* Fundo escuro quase opaco */
+  z-index: 60;                              /* Fica acima de todo o resto */
+}
+
+/* Imagens */
+img {
+  max-width: 100%;  /* Nunca passam da largura do espaço onde estão */
+  display: block;   /* Remove o espaço extra embaixo da imagem */
+}
+
+/* Links */
+a {
+  color: inherit; /* Usam a mesma cor do texto ao redor */
+}
+
+/* Contorno ao navegar com o teclado (Tab) */
+:focus-visible {
+  outline: 2px solid var(--cyan); /* Linha azul clara em volta do item selecionado */
+  outline-offset: 3px;            /* Distância entre o item e a linha */
+}
+
+/* Caixa centralizada que limita a largura do conteúdo */
+.w {
+  max-width: 1160px; /* Largura máxima */
+  margin: 0 auto;    /* Centraliza na tela */
+  padding: 0 20px;   /* Espaço nas laterais */
+}
+
+/* Títulos (h1, h2, h3) e logo (.f) usam a fonte Michroma */
+h1,
+h2,
+h3,
+.f {
+  font-family: Michroma, "Segoe UI", system-ui, sans-serif; /* Fonte futurista (com reservas) */
+  font-weight: 400;                                         /* Peso normal */
+  line-height: 1.25;                                        /* Altura da linha */
+  margin: 0;                                                /* Remove margem padrão */
+}
+
+/* Texto com degradê branco → cinza (classe .m) */
+.m {
+  background: linear-gradient(180deg, #fff 20%, #8d9bb2); /* Degradê vertical no fundo */
+  -webkit-background-clip: text;                          /* Recorta o fundo no formato do texto (Chrome/Safari) */
+  background-clip: text;                                  /* Mesmo recorte, padrão atual */
+  color: transparent;                                     /* Deixa o texto transparente para mostrar o degradê */
+}
+
+/* Texto azul (classe .b) */
+.b {
+  color: var(--blue); /* Azul da marca */
+}
+
+
+/* ============================================================
+   TOPO / MENU
+   ============================================================ */
+
+/* Barra do topo */
+header {
+  position: sticky;                        /* Acompanha a rolagem */
+  top: env(safe-area-inset-top, 0px);      /* Fica logo abaixo do notch no celular */
+  z-index: 50;                             /* Fica acima do conteúdo */
+  background: rgba(2, 5, 11, .86);         /* Fundo escuro semitransparente */
+  backdrop-filter: blur(12px);             /* Desfoca o que passa por trás */
+  border-bottom: 1px solid var(--line);    /* Linha embaixo */
+}
+
+/* Linha interna do menu (logo à esquerda, links à direita) */
+.nv {
+  display: flex;                   /* Itens lado a lado */
+  align-items: center;             /* Alinha verticalmente ao centro */
+  justify-content: space-between;  /* Separa logo e menu nas pontas */
+  height: 72px;                    /* Altura da barra */
+  gap: 16px;                       /* Espaço mínimo entre os itens */
+}
+
+/* Logo + nome da marca */
+.br {
+  display: flex;            /* Ícone e texto lado a lado */
+  align-items: center;      /* Alinhados ao centro */
+  gap: 12px;                /* Espaço entre ícone e texto */
+  text-decoration: none;    /* Sem sublinhado */
+  font-size: 1.05rem;       /* Tamanho do texto */
+}
+
+/* Ícone da marca */
+.br img {
+  height: 48px;             /* Altura do ícone */
+  width: auto;              /* Largura proporcional */
+  mix-blend-mode: screen;   /* Faz o fundo preto da imagem sumir */
+}
+
+/* Links do menu */
+nav {
+  display: flex;        /* Links lado a lado */
+  align-items: center;  /* Alinhados ao centro */
+  gap: 26px;            /* Espaço entre os links */
+}
+
+/* Cada link do menu */
+nav a {
+  text-decoration: none;  /* Sem sublinhado */
+  color: var(--mute);     /* Cinza azulado */
+  font-weight: 600;       /* Semi-negrito */
+  font-size: .95rem;      /* Tamanho do texto */
+}
+
+/* Link do menu ao passar o mouse */
+nav a:hover {
+  color: #fff; /* Fica branco */
+}
+
+/* Botão ☰ do menu (escondido no computador) */
+#mb {
+  display: none;                  /* Escondido; aparece só no celular */
+  background: none;               /* Sem fundo */
+  border: 1px solid var(--line);  /* Borda fina */
+  color: #fff;                    /* Ícone branco */
+  border-radius: 8px;             /* Cantos arredondados */
+  padding: 8px 12px;              /* Espaço interno */
+  font-size: 1.1rem;              /* Tamanho do ícone */
+  cursor: pointer;                /* Mãozinha ao passar o mouse */
+}
+
+
+/* ============================================================
+   BOTÕES
+   ============================================================ */
+
+/* Botão padrão (contorno azul) */
+.btn {
+  display: inline-flex;                          /* Botão do tamanho do conteúdo */
+  align-items: center;                           /* Texto centralizado na vertical */
+  padding: .8rem 1.5rem;                         /* Espaço interno */
+  border-radius: 4px;                            /* Cantos levemente arredondados */
+  font: 600 1rem "IBM Plex Sans", sans-serif;    /* Semi-negrito, 1rem, fonte do site */
+  text-decoration: none;                         /* Sem sublinhado */
+  border: 1px solid var(--blue);                 /* Borda azul */
+  color: #fff;                                   /* Texto branco */
+  background: transparent;                       /* Sem preenchimento */
+  cursor: pointer;                               /* Mãozinha ao passar o mouse */
+  transition: background .2s, box-shadow .2s;    /* Animação suave ao passar o mouse */
+}
+
+/* Botão padrão ao passar o mouse */
+.btn:hover {
+  box-shadow: var(--glow);              /* Brilho azul */
+  background: rgba(30, 123, 255, .15);  /* Leve preenchimento azul */
+}
+
+/* Botão azul preenchido (classe .p) */
+.btn.p {
+  background: linear-gradient(135deg, #2a86ff, #0a4bd0); /* Degradê azul */
+}
+
+/* Botão azul preenchido ao passar o mouse */
+.btn.p:hover {
+  background: linear-gradient(135deg, #4a9aff, #1a5fe8); /* Degradê mais claro */
+}
+
+
+/* ============================================================
+   INÍCIO (HERO)
+   ============================================================ */
+
+/* Seção inicial */
+.hero {
+  padding: 70px 0 60px; /* Espaço em cima e embaixo */
+  background:
+    radial-gradient(55% 70% at 78% 35%, rgba(30, 123, 255, .26), transparent 70%), /* Brilho azul atrás da logo */
+    linear-gradient(rgba(30, 123, 255, .07) 1px, transparent 1px) 0 0 / 52px 52px, /* Linhas horizontais da grade */
+    linear-gradient(90deg, rgba(30, 123, 255, .07) 1px, transparent 1px) 0 0 / 52px 52px; /* Linhas verticais da grade */
+}
+
+/* Duas colunas do hero (texto + logo) */
+.hg {
+  display: grid;                          /* Layout em grade */
+  grid-template-columns: 1.05fr .95fr;    /* Coluna do texto um pouco maior que a da logo */
+  gap: 32px;                              /* Espaço entre as colunas */
+  align-items: center;                    /* Alinha ao centro na vertical */
+}
+
+/* Título principal (tamanho geral; o estilo final fica no fim do arquivo) */
+h1 {
+  font-size: clamp(1.9rem, 4.4vw, 3.2rem); /* Tamanho que cresce com a tela, entre 1.9rem e 3.2rem */
+}
+
+/* Texto de apoio abaixo do título */
+.lead {
+  color: var(--mute);       /* Cinza azulado */
+  font-size: 1.12rem;       /* Tamanho do texto */
+  max-width: 30em;          /* Largura máxima para facilitar a leitura */
+  margin: 22px 0 30px;      /* Espaço acima e abaixo */
+}
+
+/* Grupo de botões do hero */
+.cta {
+  display: flex;      /* Botões lado a lado */
+  gap: 14px;          /* Espaço entre os botões */
+  flex-wrap: wrap;    /* Quebra de linha se faltar espaço */
+}
+
+/* Lista de destaques (✓ Remoto e presencial...) */
+.fx {
+  list-style: none;       /* Sem bolinhas */
+  padding: 0;             /* Sem recuo */
+  margin: 34px 0 0;       /* Espaço acima */
+  display: flex;          /* Itens lado a lado */
+  gap: 10px 28px;         /* Espaço vertical e horizontal entre itens */
+  flex-wrap: wrap;        /* Quebra de linha se faltar espaço */
+  color: var(--mute);     /* Cinza azulado */
+  font-size: .93rem;      /* Tamanho do texto */
+}
+
+/* Marca ✓ antes de cada item */
+.fx li::before {
+  content: "✓ ";          /* Texto inserido antes do item */
+  color: var(--cyan);     /* Azul claro */
+  font-weight: 700;       /* Negrito */
+}
+
+/* Logo grande do hero */
+.hl {
+  width: min(100%, 500px);  /* Largura: até 500px, nunca maior que o espaço */
+  margin: auto;             /* Centraliza */
+  mix-blend-mode: screen;   /* Faz o fundo preto da imagem sumir */
+}
+
+
+/* ============================================================
+   SEÇÕES (ESTRUTURA COMUM)
+   ============================================================ */
+
+/* Seção padrão */
+.sec {
+  padding: 84px 0; /* Espaço em cima e embaixo */
+}
+
+/* Seção com fundo alternativo (classe .alt) */
+.alt {
+  background: linear-gradient(180deg, #040a15, var(--bg)); /* Degradê sutil de cima para baixo */
+}
+
+/* Cabeçalho de cada seção (título + subtítulo) */
+.hd {
+  margin-bottom: 48px;  /* Espaço abaixo */
+  max-width: 40em;      /* Largura máxima do texto */
+}
+
+/* Título de seção */
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.15rem); /* Tamanho que cresce com a tela */
+}
+
+/* Subtítulo da seção */
+.hd p {
+  color: var(--mute);  /* Cinza azulado */
+  margin: 14px 0 0;    /* Espaço acima */
+}
+
+
+/* ============================================================
+   SERVIÇOS
+   ============================================================ */
+
+/* Grade dos serviços */
+.sv {
+  display: grid;                                                    /* Layout em grade */
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));      /* Quantas colunas couberem (mínimo 290px cada) */
+  gap: 38px 44px;                                                   /* Espaço vertical e horizontal */
+}
+
+/* Cada serviço */
+.sv article {
+  position: relative;              /* Permite posicionar a bolinha dentro dele */
+  padding: 0 0 4px 28px;           /* Espaço interno (recuo à esquerda) */
+  border-left: 2px solid var(--blue); /* Linha azul vertical à esquerda */
+}
+
+/* Bolinha na linha azul */
+.sv article::before {
+  content: "";                       /* Necessário para aparecer */
+  position: absolute;                /* Posicionada em relação ao serviço */
+  left: -8px;                        /* Centraliza sobre a linha */
+  top: 0;                            /* Alinha ao topo */
+  width: 14px;                       /* Largura */
+  height: 14px;                      /* Altura */
+  border: 2px solid var(--cyan);     /* Contorno azul claro */
+  border-radius: 50%;                /* Forma circular */
+  background: var(--bg);             /* Miolo da cor do fundo */
+}
+
+/* Título pequeno (nome do serviço, plano, etapa) */
+h3 {
+  font-size: .98rem;    /* Tamanho do título */
+  margin-bottom: 8px;   /* Espaço abaixo */
+}
+
+/* Descrições dos serviços e das etapas */
+.sv p,
+.stp p {
+  margin: 0;              /* Sem margem */
+  color: var(--mute);     /* Cinza azulado */
+  font-size: .96rem;      /* Tamanho do texto */
+}
+
+
+/* ============================================================
+   COMO FUNCIONA (ETAPAS)
+   ============================================================ */
+
+/* Lista das etapas */
+.stp {
+  display: grid;                                                /* Layout em grade */
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));  /* Quantas colunas couberem (mínimo 210px) */
+  gap: 34px 28px;                                               /* Espaço vertical e horizontal */
+  counter-reset: s;                                             /* Zera o contador "s" usado para numerar */
+  padding: 0;                                                   /* Sem recuo */
+  margin: 0;                                                    /* Sem margem */
+  list-style: none;                                             /* Sem numeração padrão */
+}
+
+/* Cada etapa */
+.stp li {
+  position: relative;                 /* Permite posicionar o número */
+  padding-top: 30px;                  /* Espaço para o número em cima */
+  border-top: 2px solid var(--line);  /* Linha no topo */
+}
+
+/* Número da etapa dentro de um círculo */
+.stp li::before {
+  counter-increment: s;                  /* Soma 1 ao contador a cada etapa */
+  content: counter(s);                   /* Mostra o número do contador */
+  position: absolute;                    /* Posicionado em relação à etapa */
+  top: -17px;                            /* Sobe para ficar sobre a linha */
+  left: 0;                               /* Alinha à esquerda */
+  width: 32px;                           /* Largura do círculo */
+  height: 32px;                          /* Altura do círculo */
+  border-radius: 50%;                    /* Forma circular */
+  background: var(--bg);                 /* Fundo da cor da página */
+  border: 2px solid var(--blue);         /* Contorno azul */
+  display: grid;                         /* Grade (para centralizar o número) */
+  place-items: center;                   /* Centraliza o número */
+  font: 12px Michroma, sans-serif;       /* Fonte e tamanho do número */
+  color: var(--cyan);                    /* Número azul claro */
+}
+
+
+/* ============================================================
+   PLANOS (E CARTÃO DO FORMULÁRIO)
+   ============================================================ */
+
+/* Grade dos planos */
+.pg {
+  display: grid;                                                /* Layout em grade */
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));  /* Quantas colunas couberem (mínimo 270px) */
+  gap: 24px;                                                    /* Espaço entre os cartões */
+  align-items: stretch;                                         /* Cartões com a mesma altura */
+}
+
+/* Cartão com canto superior direito cortado (planos e formulário) */
+.ch {
+  position: relative;                                                                /* Permite posicionar o fundo interno */
+  padding: 32px 28px;                                                                /* Espaço interno */
+  background: var(--line);                                                           /* Cor da "borda" (aparece em volta do miolo) */
+  clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%);        /* Recorta o canto superior direito */
+}
+
+/* Miolo do cartão (1px menor que o cartão, deixando a borda aparecer) */
+.ch::before {
+  content: "";                                                                       /* Necessário para aparecer */
+  position: absolute;                                                                /* Posicionado dentro do cartão */
+  inset: 1px;                                                                        /* 1px de distância de cada lado */
+  background: var(--panel);                                                          /* Cor do miolo */
+  clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%);        /* Mesmo corte de canto */
+  z-index: -1;                                                                       /* Fica atrás do conteúdo */
+}
+
+/* Cartão destacado (borda azul) */
+.ch.on {
+  background: var(--blue); /* Borda azul no lugar da cinza */
+}
+
+/* Etiqueta "Mais escolhido" */
+.ch small {
+  color: var(--cyan);   /* Azul claro */
+  font-weight: 600;     /* Semi-negrito */
+  font-size: .85rem;    /* Tamanho do texto */
+}
+
+/* Preço do plano */
+.pr {
+  font: 1.7rem Michroma, sans-serif; /* Tamanho e fonte do preço */
+  margin: 12px 0 4px;                /* Espaço acima e abaixo */
+}
+
+/* Texto pequeno ao lado do preço (ex.: "por atendimento") */
+.pr span {
+  font: .85rem "IBM Plex Sans", sans-serif; /* Fonte menor e normal */
+  color: var(--mute);                       /* Cinza azulado */
+}
+
+/* Lista de benefícios do plano */
+ul.ck {
+  list-style: none;       /* Sem bolinhas */
+  padding: 0;             /* Sem recuo */
+  margin: 18px 0 26px;    /* Espaço acima e abaixo */
+  color: var(--mute);     /* Cinza azulado */
+  font-size: .94rem;      /* Tamanho do texto */
+}
+
+/* Cada benefício */
+ul.ck li {
+  padding: 5px 0 5px 24px;  /* Espaço interno (recuo à esquerda para o ✓) */
+  position: relative;       /* Permite posicionar o ✓ */
+}
+
+/* Marca ✓ antes de cada benefício */
+ul.ck li::before {
+  content: "✓";               /* Símbolo */
+  position: absolute;         /* Posicionado dentro do item */
+  left: 0;                    /* Alinhado à esquerda */
+  color: var(--cyan);         /* Azul claro */
+  font-weight: 700;           /* Negrito */
+}
+
+
+/* ============================================================
+   CONTEÚDO (BANNER)
+   ============================================================ */
+
+/* Imagem do banner */
+.bn {
+  border: 1px solid var(--blue);  /* Borda azul fina */
+  box-shadow: var(--glow);        /* Brilho azul */
+  width: 100%;                    /* Ocupa toda a largura disponível */
+  height: auto;                   /* Altura proporcional */
+}
+
+
+/* ============================================================
+   DÚVIDAS FREQUENTES (FAQ)
+   ============================================================ */
+
+/* Limita a largura da coluna de perguntas */
+.fq {
+  max-width: 800px; /* Largura máxima */
+}
+
+/* Cada pergunta */
+details {
+  border-bottom: 1px solid var(--line); /* Linha separadora embaixo */
+}
+
+/* Texto da pergunta (parte clicável) */
+summary {
+  cursor: pointer;              /* Mãozinha ao passar o mouse */
+  padding: 18px 0;              /* Espaço acima e abaixo */
+  font-weight: 600;             /* Semi-negrito */
+  list-style: none;             /* Remove a setinha padrão */
+  display: flex;                /* Texto e "+" lado a lado */
+  justify-content: space-between; /* Texto à esquerda, "+" à direita */
+  gap: 12px;                    /* Espaço mínimo entre eles */
+}
+
+/* Remove a setinha padrão no Chrome/Safari */
+summary::-webkit-details-marker {
+  display: none; /* Esconde */
+}
+
+/* Símbolo "+" à direita da pergunta */
+summary::after {
+  content: "+";               /* Símbolo mostrado com a pergunta fechada */
+  color: var(--cyan);         /* Azul claro */
+  font-size: 1.4rem;          /* Tamanho do símbolo */
+  line-height: 1;             /* Altura da linha */
+}
+
+/* Símbolo "–" quando a pergunta está aberta */
+details[open] summary::after {
+  content: "–"; /* Troca o "+" por "–" */
+}
+
+/* Resposta da pergunta */
+details p {
+  margin: 0 0 18px;       /* Espaço abaixo */
+  color: var(--mute);     /* Cinza azulado */
+}
+
+
+/* ============================================================
+   CONTATO / FORMULÁRIO
+   ============================================================ */
+
+/* Duas colunas do contato (informações + formulário) */
+.ct {
+  display: grid;                        /* Layout em grade */
+  grid-template-columns: .85fr 1.15fr;  /* Formulário um pouco maior que as informações */
+  gap: 48px;                            /* Espaço entre as colunas */
+  align-items: start;                   /* Alinha ao topo */
+}
+
+/* Lista de contatos (WhatsApp, e-mail, horário) */
+.il {
+  list-style: none;   /* Sem bolinhas */
+  padding: 0;         /* Sem recuo */
+  margin: 26px 0 0;   /* Espaço acima */
+}
+
+/* Cada contato */
+.il li {
+  margin-bottom: 16px;   /* Espaço abaixo */
+  color: var(--mute);    /* Cinza azulado */
+}
+
+/* Rótulo do contato (WhatsApp, E-mail, Horário) */
+.il b {
+  display: block;   /* Fica em uma linha própria */
+  color: #fff;      /* Branco */
+}
+
+/* Formulário */
+form {
+  display: grid;  /* Campos um embaixo do outro */
+  gap: 14px;      /* Espaço entre os campos */
+}
+
+/* Rótulo de cada campo */
+label {
+  font-size: .85rem;      /* Tamanho do texto */
+  color: var(--mute);     /* Cinza azulado */
+  display: grid;          /* Rótulo em cima, campo embaixo */
+  gap: 6px;               /* Espaço entre rótulo e campo */
+}
+
+/* Campos de preenchimento */
+input,
+select,
+textarea {
+  background: #050c18;            /* Fundo escuro */
+  border: 1px solid var(--line);  /* Borda fina */
+  border-radius: 4px;             /* Cantos levemente arredondados */
+  color: #fff;                    /* Texto branco */
+  padding: 12px 14px;             /* Espaço interno */
+  font: inherit;                  /* Usa a mesma fonte do site */
+  width: 100%;                    /* Ocupa toda a largura */
+}
+
+/* Campo de mensagem (texto grande) */
+textarea {
+  min-height: 110px;    /* Altura mínima */
+  resize: vertical;     /* Só permite redimensionar na vertical */
+}
+
+/* Mensagem "Abrindo o WhatsApp..." */
+#ok {
+  color: var(--cyan);   /* Azul claro */
+  margin: 0;            /* Sem margem */
+  font-size: .92rem;    /* Tamanho do texto */
+}
+
+
+/* ============================================================
+   RODAPÉ
+   ============================================================ */
+
+/* Rodapé */
+footer {
+  border-top: 1px solid var(--line);  /* Linha no topo */
+  padding: 42px 0 30px;               /* Espaço em cima e embaixo */
+  background: #010308;                /* Fundo ainda mais escuro */
+  color: var(--mute);                 /* Cinza azulado */
+  font-size: .92rem;                  /* Tamanho do texto */
+}
+
+/* Colunas do rodapé */
+.fg {
+  display: flex;                    /* Colunas lado a lado */
+  justify-content: space-between;   /* Distribui pelas laterais */
+  gap: 32px;                        /* Espaço entre as colunas */
+  flex-wrap: wrap;                  /* Quebra de linha se faltar espaço */
+}
+
+/* Frase da marca no rodapé */
+.fg p {
+  max-width: 22em;    /* Largura máxima */
+  margin: 12px 0 0;   /* Espaço acima */
+}
+
+/* Links do rodapé */
+.fg a {
+  display: block;           /* Um link por linha */
+  text-decoration: none;    /* Sem sublinhado */
+  padding: 3px 0;           /* Espaço acima e abaixo */
+}
+
+/* Link do rodapé ao passar o mouse */
+.fg a:hover {
+  color: #fff; /* Fica branco */
+}
+
+/* Direitos autorais */
+.cp {
+  margin-top: 30px;     /* Espaço acima */
+  font-size: .82rem;    /* Texto menor */
+}
+
+
+/* ============================================================
+   BOTÃO FLUTUANTE DO WHATSAPP
+   ============================================================ */
+
+.wa {
+  position: fixed;                                          /* Fixo na tela */
+  right: 18px;                                              /* Distância da direita */
+  bottom: calc(18px + env(safe-area-inset-bottom, 0px));    /* Distância de baixo (considera a barra do celular) */
+  z-index: 40;                                              /* Fica acima do conteúdo */
+  text-decoration: none;                                    /* Sem sublinhado */
+  padding: 12px 20px;                                       /* Espaço interno */
+  border-radius: 99px;                                      /* Formato de pílula */
+  background: linear-gradient(135deg, #2a86ff, #0a4bd0);    /* Degradê azul */
+  font-weight: 600;                                         /* Semi-negrito */
+  box-shadow: var(--glow);                                  /* Brilho azul */
+}
+
+
+/* ============================================================
+   CELULAR E TABLET (telas de até 860px)
+   ============================================================ */
+@media (max-width: 860px) {
+
+  /* Hero e contato passam a ter uma coluna só */
+  .hg,
+  .ct {
+    grid-template-columns: 1fr; /* Uma coluna */
+  }
+
+  /* Logo do hero fica menor e vai para cima do texto */
+  .hl {
+    width: min(78%, 360px);   /* Largura: 78% da tela, no máximo 360px */
+    order: -1;                /* Passa para antes do texto */
+  }
+
+  /* Botão ☰ passa a aparecer */
+  #mb {
+    display: block; /* Visível */
+  }
+
+  /* Menu vira uma lista escondida que cai abaixo da barra */
+  nav {
+    display: none;                          /* Escondido até clicar no ☰ */
+    position: absolute;                     /* Posicionado em relação à barra */
+    left: 0;                                /* Cola na esquerda */
+    right: 0;                               /* Cola na direita */
+    top: 100%;                              /* Logo abaixo da barra */
+    flex-direction: column;                 /* Links um embaixo do outro */
+    align-items: stretch;                   /* Links ocupam toda a largura */
+    gap: 0;                                 /* Sem espaço extra entre links */
+    background: rgba(2, 5, 11, .98);        /* Fundo escuro quase opaco */
+    border-bottom: 1px solid var(--line);   /* Linha embaixo */
+    padding: 8px 20px 16px;                 /* Espaço interno */
+  }
+
+  /* Menu aberto (classe "open" adicionada pelo script.js) */
+  nav.open {
+    display: flex; /* Mostra o menu */
+  }
+
+  /* Links do menu no celular */
+  nav a {
+    padding: 12px 0; /* Área de toque maior */
+  }
+
+  /* Seções com menos espaço */
+  .sec {
+    padding: 60px 0; /* Espaço menor em cima e embaixo */
+  }
+
+  /* Hero com menos espaço no topo */
+  .hero {
+    padding-top: 40px; /* Espaço menor em cima */
+  }
+}
+
+
+/* ============================================================
+   ACESSIBILIDADE: reduz animações se o usuário pedir
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+
+  /* Rolagem sem animação */
+  html {
+    scroll-behavior: auto; /* Rolagem instantânea */
+  }
+
+  /* Remove todas as transições */
+  * {
+    transition: none !important; /* Sem animação nos elementos */
+  }
+}
+
+
+/* ============================================================
+   TÍTULO DO HERO (estilo final; sobrescreve o h1 geral acima)
+   Título: duas linhas, fonte mais forte, contraste alto
+   ============================================================ */
+
+/* Fonte e tamanho do título principal */
+.hero h1 {
+  font-family: "Chakra Petch", "Segoe UI", system-ui, sans-serif; /* Fonte mais forte */
+  font-weight: 700;                                                /* Negrito */
+  font-size: clamp(2rem, 4vw, 3.1rem);                             /* Tamanho que cresce com a tela */
+  line-height: 1.12;                                               /* Linhas mais juntas */
+  letter-spacing: -.01em;                                          /* Letras levemente mais próximas */
+  text-wrap: balance;                                              /* Equilibra o tamanho das linhas */
+}
+
+/* Cada linha do título */
+.hero h1 .ln {
+  display: block; /* Cada linha em sua própria linha */
+}
+
+/* Primeira linha nunca quebra */
+.hero h1 .ln:first-child {
+  white-space: nowrap; /* Impede quebra de linha */
+}
+
+/* Degradê do título (branco → cinza claro, mais contraste) */
+.hero h1 .m {
+  background: linear-gradient(180deg, #fff 40%, #c3cfe3); /* Degradê vertical */
+  -webkit-background-clip: text;                          /* Recorta o fundo no texto (Chrome/Safari) */
+  background-clip: text;                                  /* Mesmo recorte, padrão atual */
+  color: transparent;                                     /* Mostra o degradê através do texto */
+}
+
+/* "TI" azul com brilho */
+.hero h1 .b {
+  color: var(--blue);                           /* Azul da marca */
+  text-shadow: 0 0 26px rgba(30, 123, 255, .55); /* Brilho em volta do texto */
+}
+
+/* Traço decorativo abaixo do título */
+.hero h1::after {
+  content: "";                                              /* Necessário para aparecer */
+  display: block;                                           /* Em linha própria */
+  width: 96px;                                              /* Comprimento do traço */
+  height: 3px;                                              /* Espessura */
+  margin-top: 22px;                                         /* Espaço acima */
+  background: linear-gradient(90deg, var(--blue), transparent); /* Azul que desaparece */
+  box-shadow: var(--glow);                                  /* Brilho azul */
+}

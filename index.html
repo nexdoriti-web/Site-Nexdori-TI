@@ -1,103 +1,406 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Nexdori TI – Suporte de TI remoto e presencial</title>
-<meta name="description" content="Suporte de TI para casa e empresas: manutenção, redes, segurança, backup e tutoriais passo a passo.">
-<link rel="icon" href="icone.png" type="image/png">
-<link href="https://fonts.googleapis.com/css2?family=Michroma&family=IBM+Plex+Sans:wght@400;600&family=Chakra+Petch:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<!DOCTYPE html> <!-- Declara que o arquivo é HTML5 -->
+<html lang="pt-BR"> <!-- Raiz da página; idioma português do Brasil -->
+
+<head> <!-- Cabeçalho técnico: informações que não aparecem na tela -->
+
+  <meta charset="utf-8"> <!-- Codificação de caracteres (acentos funcionam) -->
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  > <!-- Ajusta o site ao tamanho da tela do celular -->
+
+  <title>Nexdori TI – Suporte de TI remoto e presencial</title> <!-- Título da aba do navegador -->
+
+  <meta
+    name="description"
+    content="Suporte de TI para casa e empresas: manutenção, redes, segurança, backup e tutoriais passo a passo."
+  > <!-- Descrição que aparece no Google -->
+
+  <link rel="icon" href="icone.png" type="image/png"> <!-- Ícone da aba do navegador -->
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Michroma&family=IBM+Plex+Sans:wght@400;600&family=Chakra+Petch:wght@700&display=swap"
+    rel="stylesheet"
+  > <!-- Carrega as fontes do Google Fonts: Michroma, IBM Plex Sans e Chakra Petch -->
+
+  <link rel="stylesheet" href="style.css"> <!-- Liga o arquivo de estilos (cores, tamanhos, layout) -->
+
 </head>
-<body>
-<header><div class="w nv">
-<a class="br f" href="#inicio"><img src="icone.png" alt="" width="68" height="48"><span class="m">NEXDORI</span><span class="b">TI</span></a>
-<button id="mb" aria-label="Abrir menu">☰</button>
-<nav>
-<a href="#servicos">Serviços</a><a href="#como">Como funciona</a><a href="#planos">Planos</a><a href="#conteudo">Conteúdo</a><a href="#faq">Dúvidas</a>
-<a class="btn p" href="#contato">Abrir chamado</a>
-</nav></div></header>
 
-<main>
-<section class="hero" id="inicio"><div class="w hg">
-<div>
-<h1><span class="ln m">Soluções em <span class="b">TI</span></span><span class="ln m">para o seu dia a dia.</span></h1>
-<p class="lead">Do notebook que travou ao Wi-Fi do escritório: atendimento remoto ou presencial, com cada passo explicado em linguagem simples.</p>
-<div class="cta"><a class="btn p" href="#contato">Abrir chamado</a><a class="btn" href="https://wa.me/5511934424010" target="_blank" rel="noopener">Falar no WhatsApp</a></div>
-<ul class="fx"><li>Remoto e presencial</li><li>Orçamento antes de começar</li><li>Acompanhamento até resolver</li></ul>
-</div>
-<img class="hl" src="logo.png" alt="Nexdori TI – Tecnologia, Suporte, Soluções" width="800" height="576">
-</div></section>
+<body> <!-- Corpo: tudo o que aparece na tela -->
 
-<section class="sec" id="servicos"><div class="w">
-<div class="hd"><h2 class="m">Serviços</h2><p>Tudo o que seu computador, sua rede e seus dados precisam, em um só lugar.</p></div>
-<div class="sv">
-<article><h3>Suporte remoto</h3><p>Acesso seguro e autorizado por você para resolver lentidão, erros e configurações sem sair de casa.</p></article>
-<article><h3>Manutenção de PCs e notebooks</h3><p>Limpeza, formatação, troca de SSD e memória, upgrades e montagem de computadores.</p></article>
-<article><h3>Redes e Wi-Fi</h3><p>Roteadores, cobertura de sinal, cabeamento, VPN e compartilhamento de arquivos.</p></article>
-<article><h3>Segurança e backup</h3><p>Remoção de vírus e golpes, antivírus, backup automático e recuperação de dados.</p></article>
-<article><h3>Windows, Office e impressoras</h3><p>Instalação, ativação, contas Microsoft, e-mail, impressoras e periféricos.</p></article>
-<article><h3>TI para empresas</h3><p>Contrato mensal, inventário, servidores, Microsoft 365 e suporte à equipe.</p></article>
-</div></div></section>
 
-<section class="sec alt" id="como"><div class="w">
-<div class="hd"><h2 class="m">Como funciona</h2><p>Do primeiro contato à solução, em quatro etapas.</p></div>
-<ol class="stp">
-<li><h3>Abra o chamado</h3><p>Conte o problema pelo formulário ou pelo WhatsApp.</p></li>
-<li><h3>Diagnóstico</h3><p>Analisamos o caso e enviamos o orçamento antes de começar.</p></li>
-<li><h3>Solução</h3><p>Resolvemos de forma remota ou presencial, explicando o que foi feito.</p></li>
-<li><h3>Acompanhamento</h3><p>Conferimos se tudo segue funcionando e tiramos suas dúvidas.</p></li>
-</ol></div></section>
+  <!-- ==================== TOPO / MENU ==================== -->
+  <header> <!-- Barra fixa do topo -->
+    <div class="w nv"> <!-- Caixa centralizada (w) com layout do menu (nv) -->
 
-<section class="sec" id="planos"><div class="w">
-<div class="hd"><h2 class="m">Planos</h2><p>Peça um orçamento sem compromisso: o valor depende do seu caso.</p></div>
-<div class="pg">
-<div class="ch"><h3>Avulso</h3><div class="pr">Sob consulta<span> por atendimento</span></div>
-<ul class="ck"><li>Atendimento remoto ou agendado</li><li>Diagnóstico com orçamento</li><li>Garantia do serviço</li></ul><a class="btn" href="#contato">Abrir chamado</a></div>
-<div class="ch on"><small>Mais escolhido</small><h3>Mensal casa</h3><div class="pr">Sob consulta<span> plano mensal</span></div>
-<ul class="ck"><li>Suporte remoto ilimitado</li><li>Backup e antivírus monitorados</li><li>Prioridade no atendimento</li></ul><a class="btn p" href="#contato">Contratar</a></div>
-<div class="ch"><h3>Empresas</h3><div class="pr">Sob medida</div>
-<ul class="ck"><li>Contrato mensal com prazos de resposta</li><li>Gestão de rede, contas e equipamentos</li><li>Relatórios e consultoria</li></ul><a class="btn" href="#contato">Pedir proposta</a></div>
-</div></div></section>
+      <!-- Logo + nome da marca; clicar leva ao início da página -->
+      <a class="br f" href="#inicio">
+        <img src="icone.png" alt="" width="68" height="48"> <!-- Ícone da marca -->
+        <span class="m">NEXDORI</span> <!-- Nome em branco degradê -->
+        <span class="b">TI</span> <!-- "TI" em azul -->
+      </a>
 
-<section class="sec alt" id="conteudo"><div class="w">
-<div class="hd"><h2 class="m">Aprenda a resolver sozinho</h2><p>Tutoriais passo a passo, dicas e análises de tecnologia, informática e produtividade.</p></div>
-<img class="bn" src="banner.png" alt="Nexdori TI: conteúdo sobre tecnologia, informática e produtividade" width="1600" height="533" loading="lazy">
-</div></section>
+      <button id="mb" aria-label="Abrir menu">☰</button> <!-- Botão do menu (aparece só no celular) -->
 
-<section class="sec" id="faq"><div class="w fq">
-<div class="hd"><h2 class="m">Dúvidas frequentes</h2></div>
-<details><summary>Vocês atendem de forma remota?</summary><p>Sim. Usamos acesso remoto seguro, somente com a sua autorização, e você acompanha tudo na tela. Ao final, o acesso é encerrado.</p></details>
-<details><summary>Quanto tempo leva para ser atendido?</summary><p>Os chamados são respondidos em horário comercial, e casos urgentes passam na frente.</p></details>
-<details><summary>Meus dados ficam seguros?</summary><p>Acessamos só o necessário para resolver o problema e nunca sem o seu consentimento.</p></details>
-<details><summary>Quais são as formas de pagamento?</summary><p>Pix e cartão para pessoas físicas; Pix, cartão e boleto para empresas.</p></details>
-<details><summary>Atendem empresas?</summary><p>Sim, com contrato mensal, prazos de resposta combinados e relatórios.</p></details>
-</div></section>
+      <nav> <!-- Links do menu -->
+        <a href="#servicos">Serviços</a> <!-- Vai para a seção Serviços -->
+        <a href="#como">Como funciona</a> <!-- Vai para a seção Como funciona -->
+        <a href="#planos">Planos</a> <!-- Vai para a seção Planos -->
+        <a href="#conteudo">Conteúdo</a> <!-- Vai para a seção Conteúdo -->
+        <a href="#faq">Dúvidas</a> <!-- Vai para a seção Dúvidas -->
+        <a class="btn p" href="#contato">Abrir chamado</a> <!-- Botão azul que vai ao formulário -->
+      </nav>
 
-<section class="sec alt" id="contato"><div class="w ct">
-<div><h2 class="m">Abra um chamado</h2><p style="color:var(--mute);margin-top:14px">Descreva o problema e responderemos pelo WhatsApp.</p>
-<ul class="il"><li><b>WhatsApp</b>(11) 93442-4010</li><li><b>E-mail</b>nexdoriti@gmail.com</li><li><b>Horário</b>Segunda a sexta, 8h às 18h; sábado, 8h às 12h</li></ul></div>
-<div class="ch"><form id="f">
-<label>Nome<input name="n" required autocomplete="name"></label>
-<label>WhatsApp ou e-mail<input name="c" required autocomplete="email"></label>
-<label>Tipo de problema<select name="t"><option>Computadores e Notebooks</option><option>Redes e Conectividade</option><option>Segurança Digital</option><option>Sistemas e Softwares</option><option>Impressoras</option><option>Soluções Empresariais</option><option>Outros Serviços</option></select></label>
-<label>O que está acontecendo?<textarea name="m" required></textarea></label>
-<button class="btn p" type="submit">Enviar pelo WhatsApp</button>
-<p id="ok" role="status" hidden>Abrindo o WhatsApp. Se não abrir, escreva para nexdoriti@gmail.com.</p>
-</form></div>
-</div></section>
-</main>
+    </div>
+  </header>
 
-<footer><div class="w">
-<div class="fg">
-<div><a class="br f" href="#inicio"><img src="icone.png" alt="" width="68" height="48"><span class="m">NEXDORI</span><span class="b">TI</span></a><p>Tecnologia, suporte e soluções para o seu dia a dia.</p></div>
-<div><a href="#servicos">Serviços</a><a href="#como">Como funciona</a><a href="#planos">Planos</a></div>
-<div><a href="#conteudo">Conteúdo</a><a href="#faq">Dúvidas</a><a href="#contato">Contato</a></div>
-</div>
-<div class="cp">© 2026 Nexdori TI. Todos os direitos reservados.</div>
-</div></footer>
-<a class="wa" href="https://wa.me/5511934424010" target="_blank" rel="noopener">Chamar no WhatsApp</a>
 
-<script src="script.js"></script>
+  <main> <!-- Conteúdo principal da página -->
+
+
+    <!-- ==================== INÍCIO (HERO) ==================== -->
+    <section class="hero" id="inicio"> <!-- Primeira seção, com fundo de grade azul -->
+      <div class="w hg"> <!-- Caixa centralizada com duas colunas (texto + logo) -->
+
+        <div> <!-- Coluna da esquerda: textos e botões -->
+
+          <h1> <!-- Título principal do site -->
+            <span class="ln m">Soluções em <span class="b">TI</span></span> <!-- Linha 1; "TI" em azul -->
+            <span class="ln m">para o seu dia a dia.</span> <!-- Linha 2 -->
+          </h1>
+
+          <p class="lead">Do notebook que travou ao Wi-Fi do escritório: atendimento remoto ou presencial, com cada passo explicado em linguagem simples.</p> <!-- Texto de apoio abaixo do título -->
+
+          <div class="cta"> <!-- Grupo de botões -->
+            <a class="btn p" href="#contato">Abrir chamado</a> <!-- Botão azul: vai ao formulário -->
+            <a
+              class="btn"
+              href="https://wa.me/5511934424010"
+              target="_blank"
+              rel="noopener"
+            >Falar no WhatsApp</a> <!-- Botão contorno: abre o WhatsApp em nova aba -->
+          </div>
+
+          <ul class="fx"> <!-- Lista de destaques com ✓ -->
+            <li>Remoto e presencial</li>
+            <li>Orçamento antes de começar</li>
+            <li>Acompanhamento até resolver</li>
+          </ul>
+
+        </div>
+
+        <img
+          class="hl"
+          src="logo.png"
+          alt="Nexdori TI – Tecnologia, Suporte, Soluções"
+          width="800"
+          height="576"
+        > <!-- Coluna da direita: logo grande -->
+
+      </div>
+    </section>
+
+
+    <!-- ==================== SERVIÇOS ==================== -->
+    <section class="sec" id="servicos"> <!-- Seção de serviços -->
+      <div class="w">
+
+        <div class="hd"> <!-- Cabeçalho da seção -->
+          <h2 class="m">Serviços</h2> <!-- Título da seção -->
+          <p>Tudo o que seu computador, sua rede e seus dados precisam, em um só lugar.</p> <!-- Subtítulo -->
+        </div>
+
+        <div class="sv"> <!-- Grade com os cartões de serviço -->
+
+          <article> <!-- Serviço 1 -->
+            <h3>Suporte remoto</h3>
+            <p>Acesso seguro e autorizado por você para resolver lentidão, erros e configurações sem sair de casa.</p>
+          </article>
+
+          <article> <!-- Serviço 2 -->
+            <h3>Manutenção de PCs e notebooks</h3>
+            <p>Limpeza, formatação, troca de SSD e memória, upgrades e montagem de computadores.</p>
+          </article>
+
+          <article> <!-- Serviço 3 -->
+            <h3>Redes e Wi-Fi</h3>
+            <p>Roteadores, cobertura de sinal, cabeamento, VPN e compartilhamento de arquivos.</p>
+          </article>
+
+          <article> <!-- Serviço 4 -->
+            <h3>Segurança e backup</h3>
+            <p>Remoção de vírus e golpes, antivírus, backup automático e recuperação de dados.</p>
+          </article>
+
+          <article> <!-- Serviço 5 -->
+            <h3>Windows, Office e impressoras</h3>
+            <p>Instalação, ativação, contas Microsoft, e-mail, impressoras e periféricos.</p>
+          </article>
+
+          <article> <!-- Serviço 6 -->
+            <h3>TI para empresas</h3>
+            <p>Contrato mensal, inventário, servidores, Microsoft 365 e suporte à equipe.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== COMO FUNCIONA ==================== -->
+    <section class="sec alt" id="como"> <!-- Seção com fundo levemente diferente (alt) -->
+      <div class="w">
+
+        <div class="hd"> <!-- Cabeçalho da seção -->
+          <h2 class="m">Como funciona</h2>
+          <p>Do primeiro contato à solução, em quatro etapas.</p>
+        </div>
+
+        <ol class="stp"> <!-- Lista numerada (os números vêm do CSS) -->
+
+          <li> <!-- Etapa 1 -->
+            <h3>Abra o chamado</h3>
+            <p>Conte o problema pelo formulário ou pelo WhatsApp.</p>
+          </li>
+
+          <li> <!-- Etapa 2 -->
+            <h3>Diagnóstico</h3>
+            <p>Analisamos o caso e enviamos o orçamento antes de começar.</p>
+          </li>
+
+          <li> <!-- Etapa 3 -->
+            <h3>Solução</h3>
+            <p>Resolvemos de forma remota ou presencial, explicando o que foi feito.</p>
+          </li>
+
+          <li> <!-- Etapa 4 -->
+            <h3>Acompanhamento</h3>
+            <p>Conferimos se tudo segue funcionando e tiramos suas dúvidas.</p>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+
+    <!-- ==================== PLANOS ==================== -->
+    <section class="sec" id="planos"> <!-- Seção de planos -->
+      <div class="w">
+
+        <div class="hd"> <!-- Cabeçalho da seção -->
+          <h2 class="m">Planos</h2>
+          <p>Peça um orçamento sem compromisso: o valor depende do seu caso.</p>
+        </div>
+
+        <div class="pg"> <!-- Grade com os 3 cartões de plano -->
+
+          <!-- Plano 1: Avulso -->
+          <div class="ch"> <!-- Cartão com canto cortado -->
+            <h3>Avulso</h3>
+            <div class="pr">Sob consulta<span> por atendimento</span></div> <!-- Preço (texto pequeno no span) -->
+            <ul class="ck"> <!-- Lista de benefícios com ✓ -->
+              <li>Atendimento remoto ou agendado</li>
+              <li>Diagnóstico com orçamento</li>
+              <li>Garantia do serviço</li>
+            </ul>
+            <a class="btn" href="#contato">Abrir chamado</a> <!-- Botão contorno -->
+          </div>
+
+          <!-- Plano 2: Mensal casa (destacado pela classe "on") -->
+          <div class="ch on"> <!-- Cartão com borda azul de destaque -->
+            <small>Mais escolhido</small> <!-- Etiqueta de destaque -->
+            <h3>Mensal casa</h3>
+            <div class="pr">Sob consulta<span> plano mensal</span></div>
+            <ul class="ck">
+              <li>Suporte remoto ilimitado</li>
+              <li>Backup e antivírus monitorados</li>
+              <li>Prioridade no atendimento</li>
+            </ul>
+            <a class="btn p" href="#contato">Contratar</a> <!-- Botão azul preenchido -->
+          </div>
+
+          <!-- Plano 3: Empresas -->
+          <div class="ch">
+            <h3>Empresas</h3>
+            <div class="pr">Sob medida</div>
+            <ul class="ck">
+              <li>Contrato mensal com prazos de resposta</li>
+              <li>Gestão de rede, contas e equipamentos</li>
+              <li>Relatórios e consultoria</li>
+            </ul>
+            <a class="btn" href="#contato">Pedir proposta</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== CONTEÚDO (BANNER) ==================== -->
+    <section class="sec alt" id="conteudo"> <!-- Seção de conteúdo educativo -->
+      <div class="w">
+
+        <div class="hd"> <!-- Cabeçalho da seção -->
+          <h2 class="m">Aprenda a resolver sozinho</h2>
+          <p>Tutoriais passo a passo, dicas e análises de tecnologia, informática e produtividade.</p>
+        </div>
+
+        <img
+          class="bn"
+          src="banner.png"
+          alt="Nexdori TI: conteúdo sobre tecnologia, informática e produtividade"
+          width="1600"
+          height="533"
+          loading="lazy"
+        > <!-- Banner (carrega só quando chega perto na rolagem) -->
+
+      </div>
+    </section>
+
+
+    <!-- ==================== DÚVIDAS FREQUENTES ==================== -->
+    <section class="sec" id="faq"> <!-- Seção de perguntas e respostas -->
+      <div class="w fq"> <!-- fq limita a largura da coluna -->
+
+        <div class="hd">
+          <h2 class="m">Dúvidas frequentes</h2>
+        </div>
+
+        <details> <!-- Pergunta 1 (abre e fecha ao clicar) -->
+          <summary>Vocês atendem de forma remota?</summary> <!-- Pergunta sempre visível -->
+          <p>Sim. Usamos acesso remoto seguro, somente com a sua autorização, e você acompanha tudo na tela. Ao final, o acesso é encerrado.</p> <!-- Resposta -->
+        </details>
+
+        <details> <!-- Pergunta 2 -->
+          <summary>Quanto tempo leva para ser atendido?</summary>
+          <p>Os chamados são respondidos em horário comercial, e casos urgentes passam na frente.</p>
+        </details>
+
+        <details> <!-- Pergunta 3 -->
+          <summary>Meus dados ficam seguros?</summary>
+          <p>Acessamos só o necessário para resolver o problema e nunca sem o seu consentimento.</p>
+        </details>
+
+        <details> <!-- Pergunta 4 -->
+          <summary>Quais são as formas de pagamento?</summary>
+          <p>Pix e cartão para pessoas físicas; Pix, cartão e boleto para empresas.</p>
+        </details>
+
+        <details> <!-- Pergunta 5 -->
+          <summary>Atendem empresas?</summary>
+          <p>Sim, com contrato mensal, prazos de resposta combinados e relatórios.</p>
+        </details>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== CONTATO / FORMULÁRIO ==================== -->
+    <section class="sec alt" id="contato"> <!-- Seção de contato -->
+      <div class="w ct"> <!-- Duas colunas: informações + formulário -->
+
+        <div> <!-- Coluna da esquerda: informações de contato -->
+          <h2 class="m">Abra um chamado</h2>
+          <p style="color:var(--mute);margin-top:14px">Descreva o problema e responderemos pelo WhatsApp.</p> <!-- Estilo aplicado direto na tag -->
+          <ul class="il"> <!-- Lista de contatos -->
+            <li><b>WhatsApp</b>(11) 93442-4010</li> <!-- b = rótulo em branco -->
+            <li><b>E-mail</b>nexdoriti@gmail.com</li>
+            <li><b>Horário</b>Segunda a sexta, 8h às 18h; sábado, 8h às 12h</li>
+          </ul>
+        </div>
+
+        <div class="ch"> <!-- Coluna da direita: cartão que envolve o formulário -->
+          <form id="f"> <!-- Formulário (o script.js usa o id "f") -->
+
+            <label> <!-- Campo: nome -->
+              Nome
+              <input name="n" required autocomplete="name"> <!-- name="n" é lido no script.js -->
+            </label>
+
+            <label> <!-- Campo: contato -->
+              WhatsApp ou e-mail
+              <input name="c" required autocomplete="email"> <!-- name="c" é lido no script.js -->
+            </label>
+
+            <label> <!-- Campo: tipo de problema (lista suspensa) -->
+              Tipo de problema
+              <select name="t"> <!-- name="t" é lido no script.js -->
+                <option>Computadores e Notebooks</option>
+                <option>Redes e Conectividade</option>
+                <option>Segurança Digital</option>
+                <option>Sistemas e Softwares</option>
+                <option>Impressoras</option>
+                <option>Soluções Empresariais</option>
+                <option>Outros Serviços</option>
+              </select>
+            </label>
+
+            <label> <!-- Campo: descrição do problema -->
+              O que está acontecendo?
+              <textarea name="m" required></textarea> <!-- name="m" é lido no script.js; mantenha sem espaços dentro -->
+            </label>
+
+            <button class="btn p" type="submit">Enviar pelo WhatsApp</button> <!-- Botão de envio -->
+
+            <p id="ok" role="status" hidden>Abrindo o WhatsApp. Se não abrir, escreva para nexdoriti@gmail.com.</p> <!-- Mensagem escondida; o script.js a mostra após o envio -->
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <!-- ==================== RODAPÉ ==================== -->
+  <footer> <!-- Rodapé do site -->
+    <div class="w">
+
+      <div class="fg"> <!-- Três colunas lado a lado -->
+
+        <div> <!-- Coluna 1: marca + frase -->
+          <a class="br f" href="#inicio"> <!-- Logo que volta ao topo -->
+            <img src="icone.png" alt="" width="68" height="48">
+            <span class="m">NEXDORI</span>
+            <span class="b">TI</span>
+          </a>
+          <p>Tecnologia, suporte e soluções para o seu dia a dia.</p>
+        </div>
+
+        <div> <!-- Coluna 2: links -->
+          <a href="#servicos">Serviços</a>
+          <a href="#como">Como funciona</a>
+          <a href="#planos">Planos</a>
+        </div>
+
+        <div> <!-- Coluna 3: links -->
+          <a href="#conteudo">Conteúdo</a>
+          <a href="#faq">Dúvidas</a>
+          <a href="#contato">Contato</a>
+        </div>
+
+      </div>
+
+      <div class="cp">© 2026 Nexdori TI. Todos os direitos reservados.</div> <!-- Direitos autorais -->
+
+    </div>
+  </footer>
+
+
+  <!-- Botão flutuante do WhatsApp (fixo no canto da tela) -->
+  <a
+    class="wa"
+    href="https://wa.me/5511934424010"
+    target="_blank"
+    rel="noopener"
+  >Chamar no WhatsApp</a>
+
+
+  <script src="script.js"></script> <!-- Carrega o JavaScript (menu e envio do formulário) -->
+
 </body>
 </html>

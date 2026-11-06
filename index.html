@@ -357,35 +357,82 @@
 
 
   <!-- ==================== RODAPÉ ==================== -->
-  <footer> <!-- Rodapé do site -->
+  <footer> <!-- Rodapé do site (linha azul brilhante no topo vem do CSS) -->
     <div class="w">
 
-      <div class="fg"> <!-- Três colunas lado a lado -->
+      <!-- Faixa de chamada para ação, antes das colunas -->
+      <div class="ft-cta">
+        <div> <!-- Textos da faixa -->
+          <h3 class="m">Seu computador deu problema?</h3> <!-- Título da faixa -->
+          <p>Abra um chamado e receba o orçamento antes de começar.</p> <!-- Frase de apoio -->
+        </div>
+        <a class="btn p" href="#contato">Abrir chamado</a> <!-- Botão azul que vai ao formulário -->
+      </div>
 
-        <div> <!-- Coluna 1: marca + frase -->
+      <div class="ft-grid"> <!-- Quatro colunas lado a lado (no celular, empilham) -->
+
+        <div class="ft-brand"> <!-- Coluna 1: marca, frase e ícones de contato -->
           <a class="br f" href="#inicio"> <!-- Logo que volta ao topo -->
-            <img src="icone.png" alt="" width="68" height="48">
-            <span class="m">NEXDORI</span>
-            <span class="b">TI</span>
+            <img src="icone.png" alt="" width="68" height="48"> <!-- Ícone da marca -->
+            <span class="m">NEXDORI</span> <!-- Nome em branco degradê -->
+            <span class="b">TI</span> <!-- "TI" em azul -->
           </a>
-          <p>Tecnologia, suporte e soluções para o seu dia a dia.</p>
+          <p>Tecnologia, suporte e soluções para o seu dia a dia.</p> <!-- Frase da marca -->
+
+          <div class="ft-social"> <!-- Ícones redondos de contato -->
+            <a
+              class="ft-ic"
+              href="https://wa.me/5511934424010"
+              target="_blank"
+              rel="noopener"
+              aria-label="WhatsApp"
+            > <!-- Ícone do WhatsApp: abre a conversa em nova aba -->
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.52.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.18 2.095 3.195 5.076 4.483.714.306 1.272.489 1.705.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              </svg>
+            </a>
+            <a class="ft-ic" href="mailto:nexdoriti@gmail.com" aria-label="E-mail"> <!-- Ícone de e-mail: abre o programa de e-mail -->
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2"/> <!-- Corpo do envelope -->
+                <path d="M3 7l9 6 9-6"/> <!-- Aba do envelope -->
+              </svg>
+            </a>
+          </div>
         </div>
 
-        <div> <!-- Coluna 2: links -->
-          <a href="#servicos">Serviços</a>
-          <a href="#como">Como funciona</a>
-          <a href="#planos">Planos</a>
+        <div class="ft-col"> <!-- Coluna 2: links do site -->
+          <h3 class="ft-title">Navegação</h3> <!-- Título da coluna -->
+          <ul>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#como">Como funciona</a></li>
+            <li><a href="#planos">Planos</a></li>
+          </ul>
         </div>
 
-        <div> <!-- Coluna 3: links -->
-          <a href="#conteudo">Conteúdo</a>
-          <a href="#faq">Dúvidas</a>
-          <a href="#contato">Contato</a>
+        <div class="ft-col"> <!-- Coluna 3: links de conteúdo -->
+          <h3 class="ft-title">Conteúdo</h3>
+          <ul>
+            <li><a href="#conteudo">Aprenda sozinho</a></li>
+            <li><a href="#faq">Dúvidas</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+
+        <div class="ft-col"> <!-- Coluna 4: dados de contato -->
+          <h3 class="ft-title">Atendimento</h3>
+          <ul class="ft-info">
+            <li><span>WhatsApp</span><a href="https://wa.me/5511934424010" target="_blank" rel="noopener">(11) 93442-4010</a></li> <!-- span = rótulo azul pequeno -->
+            <li><span>E-mail</span><a href="mailto:nexdoriti@gmail.com">nexdoriti@gmail.com</a></li>
+            <li><span>Horário</span>Seg a sex, 8h às 18h<br>Sábado, 8h às 12h</li>
+          </ul>
         </div>
 
       </div>
 
-      <div class="cp">© 2026 Nexdori TI. Todos os direitos reservados.</div> <!-- Direitos autorais -->
+      <div class="ft-bottom"> <!-- Linha final do rodapé -->
+        <span>© 2026 Nexdori TI. Todos os direitos reservados.</span> <!-- Direitos autorais -->
+        <a href="#inicio">Voltar ao topo ↑</a> <!-- Rola a página até o início -->
+      </div>
 
     </div>
   </footer>
@@ -397,7 +444,12 @@
     href="https://wa.me/5511934424010"
     target="_blank"
     rel="noopener"
-  >Chamar no WhatsApp</a>
+  >
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"> <!-- Logo do WhatsApp (herda a cor branca do botão) -->
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.52.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.18 2.095 3.195 5.076 4.483.714.306 1.272.489 1.705.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+    <span>Chamar no WhatsApp</span> <!-- Texto do botão -->
+  </a>
 
 
   <script src="script.js"></script> <!-- Carrega o JavaScript (menu e envio do formulário) -->

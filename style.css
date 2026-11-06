@@ -621,43 +621,201 @@ textarea {
 
 /* Rodapé */
 footer {
-  border-top: 1px solid var(--line);  /* Linha no topo */
-  padding: 42px 0 30px;               /* Espaço em cima e embaixo */
-  background: #010308;                /* Fundo ainda mais escuro */
+  position: relative;                 /* Permite posicionar a linha brilhante do topo */
+  overflow: hidden;                   /* Esconde o que passar das bordas */
+  padding: 56px 0 76px;               /* Espaço em cima e embaixo (embaixo sobra para o botão do WhatsApp) */
+  background:
+    radial-gradient(50% 80% at 12% 100%, rgba(30, 123, 255, .14), transparent 70%), /* Brilho azul no canto inferior esquerdo */
+    #010308;                          /* Fundo ainda mais escuro que o resto do site */
   color: var(--mute);                 /* Cinza azulado */
   font-size: .92rem;                  /* Tamanho do texto */
 }
 
-/* Colunas do rodapé */
-.fg {
-  display: flex;                    /* Colunas lado a lado */
-  justify-content: space-between;   /* Distribui pelas laterais */
-  gap: 32px;                        /* Espaço entre as colunas */
+/* Linha azul brilhante no topo do rodapé */
+footer::before {
+  content: "";                                                              /* Necessário para aparecer */
+  position: absolute;                                                       /* Posicionada dentro do rodapé */
+  top: 0;                                                                   /* Cola no topo */
+  left: 0;                                                                  /* Cola na esquerda */
+  right: 0;                                                                 /* Cola na direita */
+  height: 2px;                                                              /* Espessura da linha */
+  background: linear-gradient(90deg, transparent, var(--blue), var(--cyan), var(--blue), transparent); /* Azul que some nas pontas */
+  box-shadow: var(--glow);                                                  /* Brilho azul */
+}
+
+/* Faixa de chamada para ação (mesmo corte de canto dos cartões de plano) */
+.ft-cta {
+  position: relative;                                                       /* Permite posicionar o miolo */
+  display: flex;                                                            /* Texto e botão lado a lado */
+  align-items: center;                                                      /* Alinhados ao centro */
+  justify-content: space-between;                                           /* Texto à esquerda, botão à direita */
+  gap: 24px;                                                                /* Espaço entre texto e botão */
+  flex-wrap: wrap;                                                          /* Quebra de linha se faltar espaço */
+  padding: 30px 32px;                                                       /* Espaço interno */
+  margin-bottom: 56px;                                                      /* Espaço até as colunas */
+  background: var(--line);                                                  /* Cor da "borda" */
+  clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%); /* Recorta o canto superior direito */
+}
+
+/* Miolo da faixa, com degradê azul */
+.ft-cta::before {
+  content: "";                                                              /* Necessário para aparecer */
+  position: absolute;                                                       /* Posicionado dentro da faixa */
+  inset: 1px;                                                               /* 1px de distância de cada lado (deixa a borda aparecer) */
+  background: linear-gradient(120deg, rgba(30, 123, 255, .22), var(--panel) 60%); /* Degradê do azul para o fundo do cartão */
+  clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%); /* Mesmo corte de canto */
+  z-index: -1;                                                              /* Fica atrás do texto */
+}
+
+/* Título da faixa */
+.ft-cta h3 {
+  font-size: 1.15rem;   /* Tamanho do título */
+  margin-bottom: 6px;   /* Espaço abaixo */
+}
+
+/* Frase da faixa */
+.ft-cta p {
+  margin: 0;              /* Sem margem */
+  color: var(--mute);     /* Cinza azulado */
+}
+
+/* Grade de colunas do rodapé */
+.ft-grid {
+  display: grid;                              /* Layout em grade */
+  grid-template-columns: 1.5fr 1fr 1fr 1.3fr; /* Marca maior, depois três colunas */
+  gap: 40px;                                  /* Espaço entre as colunas */
+}
+
+/* Frase da marca */
+.ft-brand p {
+  max-width: 24em;      /* Largura máxima */
+  margin: 14px 0 20px;  /* Espaço acima e abaixo */
+}
+
+/* Linha com os ícones redondos */
+.ft-social {
+  display: flex;  /* Ícones lado a lado */
+  gap: 10px;      /* Espaço entre os ícones */
+}
+
+/* Cada ícone redondo */
+.ft-ic {
+  width: 40px;                              /* Largura */
+  height: 40px;                             /* Altura */
+  display: grid;                            /* Grade (para centralizar o desenho) */
+  place-items: center;                      /* Centraliza o desenho */
+  border: 1px solid var(--line);            /* Borda fina */
+  border-radius: 50%;                       /* Forma circular */
+  color: #fff;                              /* Desenho branco */
+  background: rgba(30, 123, 255, .08);      /* Leve fundo azul */
+  transition: border-color .2s, box-shadow .2s, background .2s; /* Animação suave */
+}
+
+/* Ícone ao passar o mouse */
+.ft-ic:hover {
+  border-color: var(--cyan);            /* Borda azul clara */
+  box-shadow: var(--glow);              /* Brilho azul */
+  background: rgba(30, 123, 255, .2);   /* Fundo azul mais forte */
+}
+
+/* Título de cada coluna */
+.ft-title {
+  font-size: .8rem;           /* Texto pequeno */
+  letter-spacing: .08em;      /* Espaço entre as letras */
+  text-transform: uppercase;  /* Letras maiúsculas */
+  color: #fff;                /* Branco */
+  margin-bottom: 18px;        /* Espaço abaixo */
+}
+
+/* Traço azul embaixo do título da coluna */
+.ft-title::after {
+  content: "";                                                  /* Necessário para aparecer */
+  display: block;                                               /* Em linha própria */
+  width: 28px;                                                  /* Comprimento do traço */
+  height: 2px;                                                  /* Espessura */
+  margin-top: 10px;                                             /* Espaço acima */
+  background: linear-gradient(90deg, var(--cyan), transparent); /* Azul claro que desaparece */
+}
+
+/* Listas das colunas */
+.ft-col ul {
+  list-style: none;   /* Sem bolinhas */
+  padding: 0;         /* Sem recuo */
+  margin: 0;          /* Sem margem */
+}
+
+/* Links das colunas */
+.ft-col a {
+  display: inline-block;                    /* Permite mover o link no hover */
+  padding: 5px 0;                           /* Espaço acima e abaixo */
+  text-decoration: none;                    /* Sem sublinhado */
+  transition: color .2s, transform .2s;     /* Animação suave */
+}
+
+/* Link ao passar o mouse */
+.ft-col a:hover {
+  color: #fff;                  /* Fica branco */
+  transform: translateX(4px);   /* Move 4px para a direita */
+}
+
+/* Itens de atendimento (WhatsApp, e-mail, horário) */
+.ft-info li {
+  margin-bottom: 12px;  /* Espaço entre os itens */
+  line-height: 1.5;     /* Altura da linha */
+}
+
+/* Rótulo pequeno azul (WhatsApp, E-mail, Horário) */
+.ft-info span {
+  display: block;             /* Em linha própria */
+  color: var(--cyan);         /* Azul claro */
+  font-size: .72rem;          /* Texto pequeno */
+  font-weight: 600;           /* Semi-negrito */
+  letter-spacing: .08em;      /* Espaço entre as letras */
+  text-transform: uppercase;  /* Letras maiúsculas */
+}
+
+/* Linha final (direitos autorais + voltar ao topo) */
+.ft-bottom {
+  display: flex;                    /* Itens lado a lado */
+  justify-content: space-between;   /* Um em cada ponta */
+  gap: 12px 24px;                   /* Espaço vertical e horizontal */
   flex-wrap: wrap;                  /* Quebra de linha se faltar espaço */
+  margin-top: 48px;                 /* Espaço acima */
+  padding-top: 22px;                /* Espaço entre a linha e o texto */
+  border-top: 1px solid var(--line); /* Linha separadora */
+  font-size: .82rem;                /* Texto menor */
 }
 
-/* Frase da marca no rodapé */
-.fg p {
-  max-width: 22em;    /* Largura máxima */
-  margin: 12px 0 0;   /* Espaço acima */
+/* Link "Voltar ao topo" */
+.ft-bottom a {
+  text-decoration: none;  /* Sem sublinhado */
+  color: var(--cyan);     /* Azul claro */
+  font-weight: 600;       /* Semi-negrito */
 }
 
-/* Links do rodapé */
-.fg a {
-  display: block;           /* Um link por linha */
-  text-decoration: none;    /* Sem sublinhado */
-  padding: 3px 0;           /* Espaço acima e abaixo */
-}
-
-/* Link do rodapé ao passar o mouse */
-.fg a:hover {
+/* "Voltar ao topo" ao passar o mouse */
+.ft-bottom a:hover {
   color: #fff; /* Fica branco */
 }
 
-/* Direitos autorais */
-.cp {
-  margin-top: 30px;     /* Espaço acima */
-  font-size: .82rem;    /* Texto menor */
+/* Rodapé em telas médias: duas colunas */
+@media (max-width: 860px) {
+  .ft-grid {
+    grid-template-columns: 1fr 1fr;   /* Duas colunas */
+  }
+  .ft-brand {
+    grid-column: 1 / -1;              /* A marca ocupa a largura toda */
+  }
+}
+
+/* Rodapé em telas pequenas: uma coluna */
+@media (max-width: 540px) {
+  .ft-grid {
+    grid-template-columns: 1fr;       /* Uma coluna */
+  }
+  .ft-cta {
+    padding: 26px 22px;               /* Menos espaço interno */
+  }
 }
 
 
@@ -670,12 +828,20 @@ footer {
   right: 18px;                                              /* Distância da direita */
   bottom: calc(18px + env(safe-area-inset-bottom, 0px));    /* Distância de baixo (considera a barra do celular) */
   z-index: 40;                                              /* Fica acima do conteúdo */
+  display: inline-flex;                                     /* Logo e texto lado a lado */
+  align-items: center;                                      /* Alinhados ao centro */
+  gap: 10px;                                                /* Espaço entre logo e texto */
   text-decoration: none;                                    /* Sem sublinhado */
   padding: 12px 20px;                                       /* Espaço interno */
   border-radius: 99px;                                      /* Formato de pílula */
   background: linear-gradient(135deg, #2a86ff, #0a4bd0);    /* Degradê azul */
   font-weight: 600;                                         /* Semi-negrito */
   box-shadow: var(--glow);                                  /* Brilho azul */
+}
+
+/* Logo dentro do botão */
+.wa svg {
+  flex: none; /* Não encolhe quando falta espaço */
 }
 
 

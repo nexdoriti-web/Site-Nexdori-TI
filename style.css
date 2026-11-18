@@ -276,9 +276,12 @@ h1 {
 
 /* Logo grande do hero */
 .hl {
-  width: min(100%, 500px);  /* Largura: até 500px, nunca maior que o espaço */
-  margin: auto;             /* Centraliza */
-  mix-blend-mode: screen;   /* Faz o fundo preto da imagem sumir */
+  width: 100%;              /* Ocupa toda a largura da coluna */
+  max-width: 580px;         /* Limite para não ficar gigante em telas largas */
+  height: auto;             /* Mantém a proporção da imagem */
+  margin: 0 auto;           /* Centraliza na coluna */
+  justify-self: center;     /* Centraliza dentro da grade */
+  filter: drop-shadow(0 0 36px rgba(30, 123, 255, .22)); /* Brilho azul suave ao redor da logo */
 }
 
 
@@ -858,7 +861,7 @@ footer::before {
 
   /* Logo do hero fica menor e vai para cima do texto */
   .hl {
-    width: min(78%, 360px);   /* Largura: 78% da tela, no máximo 360px */
+    width: min(88%, 440px);   /* Largura: 88% da tela, no máximo 440px */
     order: -1;                /* Passa para antes do texto */
   }
 
